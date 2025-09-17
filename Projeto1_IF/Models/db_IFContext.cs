@@ -129,6 +129,7 @@ public partial class db_IFContext : DbContext
 
         modelBuilder.Entity<TbAlimento>(entity =>
         {
+            //entity.ToTable("tbAlimento", "dbo");
             entity.HasKey(e => e.IdAlimento).HasName("PK__tbAlimen__2406570577A5EC2C");
         });
 

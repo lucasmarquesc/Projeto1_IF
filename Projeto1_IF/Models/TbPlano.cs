@@ -12,11 +12,14 @@ namespace Projeto1_IF.Models;
 public partial class TbPlano
 {
     [Key]
+    [Display(Name ="Plano")]
     public int IdPlano { get; set; }
 
     [Required]
     [StringLength(100)]
     [Unicode(false)]
+
+    [Display(Name = "Plano")]
     public string Nome { get; set; }
 
     public int Validade { get; set; }

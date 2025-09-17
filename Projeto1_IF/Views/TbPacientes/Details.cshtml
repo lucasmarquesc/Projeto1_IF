@@ -1,0 +1,177 @@
+﻿@model Projeto1_IF.Models.TbPaciente
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    /* Container principal */
+    div {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 750px;
+        margin: 40px auto;
+        padding: 25px;
+        background-color: #fdfdfd;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Títulos */
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        text-align: center;
+        color: #555;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+
+    /* Lista de detalhes (dl) */
+    dl.row {
+        background-color: #f7f8fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    dt.col-sm-2 {
+        font-weight: 600;
+        color: #34495e;
+        padding: 5px 0;
+    }
+
+    dd.col-sm-10 {
+        color: #555;
+        padding: 5px 0;
+        margin-left: 0;
+    }
+
+    /* Links de ação */
+    a {
+        color: #4a90e2;
+        text-decoration: none;
+        font-weight: 500;
+        margin-right: 15px;
+        transition: color 0.3s ease;
+    }
+
+        a:hover {
+            color: #357abd;
+            text-decoration: underline;
+        }
+   
+
+    }
+</style>
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Pacientes</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rg)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rg)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeResponsavel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomeResponsavel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sexo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Etnia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Etnia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TelResidencial)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TelResidencial)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TelComercial)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TelComercial)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TelCelular)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TelCelular)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Profissao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Profissao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FlgAtleta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FlgAtleta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FlgGestante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FlgGestante)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdCidadeNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdCidadeNavigation.IdCidade)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdPaciente">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

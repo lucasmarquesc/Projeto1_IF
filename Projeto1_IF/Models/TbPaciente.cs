@@ -30,6 +30,8 @@ public partial class TbPaciente
     [Column("CPF")]
     [StringLength(15)]
     [Unicode(false)]
+    [RegularExpression(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{11}$",
+        ErrorMessage = "CPF inválido.")]
     public string Cpf { get; set; }
 
     public DateOnly DataNascimento { get; set; }

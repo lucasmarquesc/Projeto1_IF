@@ -1,0 +1,197 @@
+﻿@model Projeto1_IF.Models.TbPaciente
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    /* Estilo geral do formulário */
+    form {
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Título e subtítulo */
+    h1, h4 {
+        text-align: center;
+        color: #333;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+
+    /* Estilo dos labels */
+    label {
+        font-weight: 600;
+        color: #555;
+    }
+
+    /* Inputs e selects */
+    input.form-control,
+    select.form-control {
+        width: 100%;
+        padding: 10px 12px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-size: 14px;
+    }
+
+        /* Efeito de foco */
+        input.form-control:focus,
+        select.form-control:focus {
+            border-color: #4a90e2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+            outline: none;
+        }
+
+    /* Mensagens de validação */
+    .text-danger {
+        font-size: 13px;
+        color: #e74c3c;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+
+    /* Botão */
+    .btn-primary {
+        background-color: #4a90e2;
+        border-color: #4a90e2;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #357abd;
+            border-color: #357abd;
+        }
+
+    /* Link "Back to List" */
+    a {
+        color: #4a90e2;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    
+</style>
+<h1>Adicionar</h1>
+
+<h4>Paciente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rg" class="control-label"></label>
+                <input asp-for="Rg" class="form-control" />
+                <span asp-validation-for="Rg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cpf" class="control-label"></label>
+                <input asp-for="Cpf" class="form-control" />
+                <span asp-validation-for="Cpf" class="text-danger"></span>               
+            </div>
+            <div class="form-group">
+                <label asp-for="DataNascimento" class="control-label"></label>
+                <input asp-for="DataNascimento" class="form-control" />
+                <span asp-validation-for="DataNascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeResponsavel" class="control-label"></label>
+                <input asp-for="NomeResponsavel" class="form-control" />
+                <span asp-validation-for="NomeResponsavel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sexo" class="control-label"></label>
+                <input asp-for="Sexo" class="form-control" />
+                <span asp-validation-for="Sexo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Etnia" class="control-label"></label>
+                <input asp-for="Etnia" class="form-control" />
+                <span asp-validation-for="Etnia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Endereco" class="control-label"></label>
+                <input asp-for="Endereco" class="form-control" />
+                <span asp-validation-for="Endereco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bairro" class="control-label"></label>
+                <input asp-for="Bairro" class="form-control" />
+                <span asp-validation-for="Bairro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdCidade" class="control-label"></label>
+                <select asp-for="IdCidade" class ="form-control" asp-items="ViewBag.IdCidade"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelResidencial" class="control-label"></label>
+                <input asp-for="TelResidencial" class="form-control" />
+                <span asp-validation-for="TelResidencial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelComercial" class="control-label"></label>
+                <input asp-for="TelComercial" class="form-control" />
+                <span asp-validation-for="TelComercial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelCelular" class="control-label"></label>
+                <input asp-for="TelCelular" class="form-control" />
+                <span asp-validation-for="TelCelular" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profissao" class="control-label"></label>
+                <input asp-for="Profissao" class="form-control" />
+                <span asp-validation-for="Profissao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlgAtleta" class="control-label"></label>
+                <input asp-for="FlgAtleta" class="form-control" />
+                <span asp-validation-for="FlgAtleta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlgGestante" class="control-label"></label>
+                <input asp-for="FlgGestante" class="form-control" />
+                <span asp-validation-for="FlgGestante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

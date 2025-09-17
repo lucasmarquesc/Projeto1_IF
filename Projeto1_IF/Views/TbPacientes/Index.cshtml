@@ -1,0 +1,187 @@
+﻿@model IEnumerable<Projeto1_IF.Models.TbPaciente>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+<style>
+    /* Container geral */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 20px;
+        background-color: #f9f9f9;
+    }
+
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+
+    /* Link "Adicionar novo" */
+    p a {
+        display: inline-block;
+        margin-bottom: 15px;
+        padding: 8px 16px;
+        background-color: #4a90e2;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+    }
+
+        p a:hover {
+            background-color: #357abd;
+        }
+
+    /* Tabela */
+    table.table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        table-layout: auto; /* permite que as colunas ajustem-se ao conteúdo */
+    }
+
+        /* Cabeçalho */
+        table.table thead th {
+            padding: 12px 15px;
+            font-weight: 600;
+            white-space: normal; /* permite quebra de linha se necessário */
+            overflow: visible;
+            text-overflow: clip;
+        }
+
+        /* Células do corpo */
+        table.table tbody td {
+            padding: 10px 15px;
+            color: #333;
+            white-space: normal; /* permite quebra de linha */
+            overflow: visible;
+            text-overflow: clip;
+        }
+
+
+</style>
+
+<p>
+    <a asp-action="Create">Adicionar novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeResponsavel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sexo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Etnia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bairro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelResidencial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelComercial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelCelular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profissao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlgAtleta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlgGestante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCidadeNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeResponsavel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Etnia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bairro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelResidencial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelComercial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelCelular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profissao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlgAtleta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlgGestante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCidadeNavigation.IdCidade)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPaciente">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdPaciente">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPaciente">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
